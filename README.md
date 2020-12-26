@@ -1,0 +1,1 @@
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.surenpi.autotest/autotest.report.html/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.surenpi.autotest/autotest.report.html)

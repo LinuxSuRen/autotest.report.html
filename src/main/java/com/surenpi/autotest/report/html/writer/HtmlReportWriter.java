@@ -30,6 +30,7 @@ import org.modelmapper.ModelMapper;
 
 import javax.annotation.PreDestroy;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -101,7 +102,9 @@ public class HtmlReportWriter implements RecordReportWriter, ReportStore
 
         Template template = cfg.getTemplate("report.ftl");
 
-        try (Writer fileWriter = new FileWriter(new File(this.reportRoot, "output.html"))) {
+
+        try (Writer fileWriter = new FileWriter(new File(this.reportRoot, String.format("output-%s.html",
+                new SimpleDateFormat("yyyy-MM-dd-HH:mm:SS").format(new Date()))))) {
             template.process(input, fileWriter);
         }
     }
